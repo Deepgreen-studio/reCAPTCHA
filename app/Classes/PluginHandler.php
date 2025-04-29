@@ -5,7 +5,7 @@ namespace EHxRecaptcha\Classes;
 
 use EHxDonate\Classes\Settings as DonateSettings;
 use EHxEvent\Classes\Settings as EventSettings;
-use EHxMember\Classes\Settings as MemberSettings;
+use EHxMembers\Classes\Settings as MemberSettings;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -44,10 +44,10 @@ class PluginHandler
         }
 
         foreach ($data as $key => $value) {
-            $options = array_merge($value, [
-                'google_recaptcha_enable' => true,
-                'google_recaptcha_site_key' => HandleSetting::DEFAULT_SITE_KEY,
-                'google_recaptcha_secret_key' => HandleSetting::DEFAULT_SECRET_KEY,
+            $options = array_merge((array) $value, [
+                'google_recaptcha_enable' => false,
+                'google_recaptcha_site_key' => null,
+                'google_recaptcha_secret_key' => null,
             ]);
 
             update_option($key, $options);

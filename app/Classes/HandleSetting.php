@@ -37,7 +37,8 @@ class HandleSetting
     public static function getIntegrationFields(): array
     {
         return [
-            ['field_name' => 'google_recaptcha_enable', 'title' => esc_html__('Enabled', 'ehx-recaptcha'), 'type' => 'checkbox', 'placeholder' => esc_html__('Enable Google reCAPTCHA to protect your forms from spam and abuse.', 'ehx-recaptcha'), 'option' => 'recaptcha'],
+            // ['field_name' => 'google_recaptcha_enable', 'title' => esc_html__('Enabled', 'ehx-recaptcha'), 'type' => 'checkbox', 'placeholder' => wp_kses_post(sprintf(__( 'Enable %s to protect your forms from spam and abuse.', 'ehx-donate' ), '<a href="' . esc_url('https://www.google.com/recaptcha/admin/create') . '" target="_blank" rel="noopener noreferrer">' . __( 'Google reCAPTCHA', 'ehx-donate' ) . '</a>')), 'option' => 'recaptcha'],
+            ['field_name' => 'google_recaptcha_enable', 'title' => esc_html__('Enabled', 'ehx-recaptcha'), 'type' => 'checkbox', 'placeholder' => esc_html__( 'Enable Google reCAPTCHA to protect your forms from spam and abuse.', 'ehx-donate' ), 'option' => 'recaptcha'],
             ['field_name' => 'google_recaptcha_site_key', 'title' => esc_html__('Site key', 'ehx-recaptcha'), 'placeholder' => esc_html__('Google Recaptcha Site key', 'ehx-recaptcha'), 'option' => 'recaptcha'],
             ['field_name' => 'google_recaptcha_secret_key', 'title' => esc_html__('Secret key', 'ehx-recaptcha'), 'placeholder' => esc_html__('Google Recaptcha Secret key', 'ehx-recaptcha'), 'option' => 'recaptcha'],
         ];
