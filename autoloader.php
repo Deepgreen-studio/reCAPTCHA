@@ -13,7 +13,7 @@ if (!function_exists('EHxRecaptchaAutoload')) {
 
     function EHxRecaptchaAutoload($class)
     {
-        $prefix = 'EHxRecaptcha\\'; // Your root namespace
+        $prefix = 'EHxRecaptcha\\'; // Root namespace
         $base_dir = __DIR__ . '/app/'; // Base directory where classes are stored
 
         // Does the class use the namespace prefix?
